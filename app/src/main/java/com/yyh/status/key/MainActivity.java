@@ -1,12 +1,15 @@
 package com.yyh.status.key;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.TextView;
 
 
+import com.yyh.status.key.Header_zoomOut_recover.SlidingScrollViewActivity;
 import com.yyh.status.key.base.BaseActivity;
 import com.yyh.status.key.R;
 import com.yyh.status.key.inteml.ActionBarClickListener;
@@ -20,9 +23,10 @@ import java.util.List;
 
 /**
  * 类功能描述：</br>
- *  Android沉浸式状态栏 + scrollView顶部伸缩 + actionBar渐变
+ * Android沉浸式状态栏 + scrollView顶部伸缩 + actionBar渐变
  * 博客地址：http://blog.csdn.net/androidstarjack
  * 公众号：终端研发部
+ *
  * @author yuyahao
  * @version 1.0 </p> 修改时间：</br> 修改备注：</br>
  */
@@ -63,8 +67,20 @@ public class MainActivity extends BaseActivity implements ActionBarClickListener
 //        zoomView = findViewById(R.id.lay_header);
 //        //关联伸缩的视图
 //        translucentScrollView.setPullZoomView(zoomView);
+
+        //jump_srollview
+        TextView bt = (TextView) findViewById(R.id.jump_srollview);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();//SlidingScrollViewActivity
+                intent.setClass(MainActivity.this, SlidingScrollViewActivity.class);
+                startActivity(intent);
+            }
+        });
     }
-    private void initData(){//TODO add  list_recyclerview
+
+    private void initData() {//TODO add  list_recyclerview
 
         List<UserRecordBean> recordBeans = new ArrayList<>();
         for (int i = 0; i < 15; i++) {
@@ -74,7 +90,7 @@ public class MainActivity extends BaseActivity implements ActionBarClickListener
             recordBeans.add(bean);
         }
 
-        RecyclerView rv = (RecyclerView)findViewById(R.id.list_recyclerview);
+        RecyclerView rv = (RecyclerView) findViewById(R.id.list_recyclerview);
         InviteRecordsAdapter adapter = new InviteRecordsAdapter(this);
         rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rv.setAdapter(adapter);

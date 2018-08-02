@@ -1,5 +1,6 @@
 package com.yyh.status.key.Header_zoomOut_recover;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,7 +11,9 @@ import com.yyh.status.key.R;
 /**
  * Android实现ScrollView顶部布局上滑缩小，下滑恢复- http://download.csdn.net/download/yanjunhui2011/10028253
  */
-public class SlidingScrollViewActivity extends AppCompatActivity {
+public class SlidingScrollViewActivity extends Activity {//AppCompat
+
+    //com.yyh.status.key.Header_zoomOut_recover.SlidingScrollViewActivity
 
     private MyScrollView scrollView;
 

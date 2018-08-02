@@ -16,6 +16,8 @@ import android.widget.ScrollView;
  */
 
 public class MyScrollView extends ScrollView {
+
+    //com.yyh.status.key.Header_zoomOut_recover.MyScrollView
     private static final String TAG = "MyScrollView";
 
     private View headerView;
