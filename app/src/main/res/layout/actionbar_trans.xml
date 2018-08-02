@@ -46,6 +46,7 @@
         </RelativeLayout>
 
         <TextView
+            android:textColor="#ff0000"
             android:id="@+id/tv_actionbar_title"
             style="@style/text_white"
             android:layout_centerInParent="true"
