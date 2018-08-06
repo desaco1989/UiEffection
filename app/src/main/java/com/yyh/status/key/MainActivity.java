@@ -15,6 +15,7 @@ import com.yyh.status.key.R;
 import com.yyh.status.key.inteml.ActionBarClickListener;
 import com.yyh.status.key.new_add.InviteRecordsAdapter;
 import com.yyh.status.key.new_add.UserRecordBean;
+import com.yyh.status.key.scroll_gradient.ScrollGradientActivity;
 import com.yyh.status.key.widget.TranslucentActionBar;
 import com.yyh.status.key.widget.TranslucentScrollView;
 
@@ -42,7 +43,6 @@ public class MainActivity extends BaseActivity implements ActionBarClickListener
         setContentView(R.layout.activity_main);
 
         init();
-
         initData();
     }
 
@@ -75,6 +75,16 @@ public class MainActivity extends BaseActivity implements ActionBarClickListener
             public void onClick(View view) {
                 Intent intent = new Intent();//SlidingScrollViewActivity
                 intent.setClass(MainActivity.this, SlidingScrollViewActivity.class);
+                startActivity(intent);
+            }
+        });
+        //jump_srollview_gradient
+        TextView srollview_gradient = (TextView) findViewById(R.id.jump_srollview_gradient);
+        srollview_gradient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();//SlidingScrollViewActivity
+                intent.setClass(MainActivity.this, ScrollGradientActivity.class);
                 startActivity(intent);
             }
         });

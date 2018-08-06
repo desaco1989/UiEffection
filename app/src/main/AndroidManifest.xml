@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.yyh.status.key.Header_zoomOut_recover.SlidingScrollViewActivity"/>
+        <activity android:name="com.yyh.status.key.scroll_gradient.ScrollGradientActivity"/>
 
     </application>
 
